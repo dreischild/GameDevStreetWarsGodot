@@ -20,3 +20,10 @@ _surfaces = [{
 [node name="MeshGenerator" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_hpc76")
 script = ExtResource("1_hpc76")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.774569, 0.308344, -0.552237, 0, 0.873118, 0.487509, 0.632489, 0.37761, -0.67629, -1.01332, 1.81043, -1.48914)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.445828, 0.77229, -0.452554, 0.541988, 0.63527, 0.550165, 0.712381, 0, -0.701793, 0, 1.47198, -0.00197268)
+light_energy = 12.879
