@@ -24,6 +24,7 @@ public partial class MeshGenerator : MeshInstance3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		RegenerateMesh();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,12 +46,10 @@ public partial class MeshGenerator : MeshInstance3D
 
 		List<Vector3> vertices = new List<Vector3>
 		{
-			//new Vector3(0, 0, 0),
-			//new Vector3(1, 0, 0),
-			//new Vector3(0, 0, 1),
-			new Vector3(2, 0, 1),
-			new Vector3(3, 0, 1),
-			new Vector3(2, 0, 2),
+			new Vector3(0, 0, 0),
+			new Vector3(1, 0, 0),
+			new Vector3(1, 0, 1),
+			new Vector3(0, 0, 1),
 		};
 
 		List<Vector2> uvs = new List<Vector2>
@@ -58,18 +57,22 @@ public partial class MeshGenerator : MeshInstance3D
 			Vector2.Up,
 			Vector2.Up,
 			Vector2.Up,
+			Vector2.Up,
 		};
 
 		List<Vector3> normals = new List<Vector3>
 		{
-			new Vector3(0, 1, 0),
-			new Vector3(0, 1, 0),
-			new Vector3(0, 1, 0),
+			Vector3.Up,
+			Vector3.Up,
+			Vector3.Up,
+			Vector3.Up,
 		};
 
+		/** Verbindung der Vertices (Es muss gegen den Uhrzeigersinn sein, damit die Normalen nach oben zeigen) */
 		List<int> indices = new List<int>
 		{
 			0, 1, 2,
+			0, 2, 3,
 		};
 
 		surfaceArray[(int)Mesh.ArrayType.Vertex] = vertices.ToArray();
